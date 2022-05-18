@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Wed May 11 15:49:39 
+	KST 2016 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MainExDAO">
+
+	<select id="selectUserId" parameterType="map"
+		resultType="String">
+		select userid
+		from mainex
+		where userid = #{userId}
+		and
+		userpassword = #{userPassword}
+	</select>
+
+	<insert id="register">
+		insert into mainex values(#{userId}, #{userPassword},
+		NOW(), 0)
+	</insert>
+</mapper>

@@ -4,9 +4,8 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MainExDAO">
 
-	<select id="selectUserId" parameterType="map"
-		resultType="String">
-		select userid
+	<select id="selectUserId" resultType="java.util.HashMap">
+		select *
 		from mainex
 		where userid = #{userId}
 		and
@@ -17,4 +16,17 @@
 		insert into mainex values(#{userId}, #{userPassword},
 		NOW(), 0)
 	</insert>
+	
+	<update id="update">
+		update mainex
+		set userpassword = #{userpassword},
+			userregdate = #{userregdate},
+			userpoint = #{userpoint}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="delete">
+		delete from mainex
+		where userid = #{userid}
+	</delete>
 </mapper>

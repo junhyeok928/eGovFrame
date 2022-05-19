@@ -3,7 +3,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입 페이지</title>
+<style>
+	body {
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 	<h2>회원가입</h2>
